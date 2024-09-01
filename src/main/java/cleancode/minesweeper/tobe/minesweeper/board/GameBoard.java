@@ -1,10 +1,10 @@
 package cleancode.minesweeper.tobe.minesweeper.board;
 
-import cleancode.minesweeper.tobe.minesweeper.gamelevel.GameLevel;
+import cleancode.minesweeper.tobe.minesweeper.board.cell.*;
 import cleancode.minesweeper.tobe.minesweeper.board.position.CellPosition;
 import cleancode.minesweeper.tobe.minesweeper.board.position.CellPositions;
 import cleancode.minesweeper.tobe.minesweeper.board.position.RelativePosition;
-import cleancode.minesweeper.tobe.minesweeper.board.cell.*;
+import cleancode.minesweeper.tobe.minesweeper.gamelevel.GameLevel;
 
 import java.util.List;
 
@@ -23,7 +23,6 @@ public class GameBoard {
         initializeGameStatus();
     }
     
-    // 상태 변경
     public void initializeGame() {
         initializeGameStatus();
         CellPositions cellPositions = CellPositions.from(board);
@@ -59,7 +58,6 @@ public class GameBoard {
         return gameStatus == GameStatus.IN_PROGRESS;
     }
 
-    // 판별
     public boolean isInvalidCellPosition(CellPosition cellPosition) {
         int rowSize = getRowSize();
         int colSize = getColSize();
@@ -76,7 +74,6 @@ public class GameBoard {
         return gameStatus == GameStatus.LOSE;
     }
 
-    // 조회
     public CellSnapshot getSnapshot(CellPosition cellPosition) {
         Cell cell = findCell(cellPosition);
         return cell.getSnapshot();
