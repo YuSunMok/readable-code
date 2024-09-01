@@ -16,7 +16,7 @@ public class BoardIndexConverter {
         return convertColFrom(cellInputCol);
     }
 
-    private  int convertRowFrom(String cellInputRow) {
+    private int convertRowFrom(String cellInputRow) {
         int rowIndex = Integer.parseInt(cellInputRow) - 1;
         if (rowIndex < 0) {
             throw new GameException("잘못된 입력입니다.");
@@ -24,7 +24,7 @@ public class BoardIndexConverter {
         return rowIndex;
     }
 
-    private  int convertColFrom(char cellInputCol) {
+    private int convertColFrom(char cellInputCol) {
         int colIndex = cellInputCol - BASE_CHAR_FOR_COL;
         if (colIndex < 0) {
             throw new GameException("잘못된 입력입니다.");
